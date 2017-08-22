@@ -31,7 +31,7 @@ services:
   # Bind (DNS Server)
   # ----------------------------------------
   bind:
-    image: cytopia/bind:latest
+    image: registry.cn-hangzhou.aliyuncs.com/barray/bind:latest
     #image: cytopia/bind:0.10
     restart: always
     ports:
@@ -64,7 +64,7 @@ services:
   # PHP-FPM
   # ----------------------------------------
   php:
-    image: cytopia/${PHP_SERVER:-php-fpm-7.0}:latest
+    image: registry.cn-hangzhou.aliyuncs.com/barray/${PHP_SERVER:-php-fpm-7.0}:latest
     #image: cytopia/${PHP_SERVER:-php-fpm-7.0}:0.11
     restart: always
 
@@ -103,7 +103,6 @@ services:
       - PHP_XDEBUG_ENABLE
       - PHP_XDEBUG_REMOTE_PORT
       - PHP_XDEBUG_REMOTE_HOST
-
       ##
       ## Mail-catching
       ##
@@ -192,7 +191,7 @@ services:
   # HTTPD
   # ----------------------------------------
   httpd:
-    image: cytopia/${HTTPD_SERVER:-nginx-stable}:latest
+    image: registry.cn-hangzhou.aliyuncs.com/barray/${HTTPD_SERVER:-nginx-stable}:latest
     #image: cytopia/${HTTPD_SERVER:-nginx-stable}:0.9
     restart: always
 
@@ -270,7 +269,7 @@ services:
   # DATABASE
   # ----------------------------------------
   mysql:
-    image: cytopia/${MYSQL_SERVER:-mariadb-10.1}:latest
+    image: registry.cn-hangzhou.aliyuncs.com/barray/${MYSQL_SERVER:-mariadb-10.1}:latest
     #image: cytopia/${MYSQL_SERVER:-mariadb-10.1}:0.9
 
     # Manually build via `docker-compose build`
